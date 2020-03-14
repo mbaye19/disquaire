@@ -1,0 +1,20 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+
+{% include 'store/list.html' with list_title=title %}
+...
+{% if albums|length_is:"0" %}
+<div class="text-center">
+    Palsambleu ! Nous n'avons trouvé aucun résultat à cette requête. Même pas de quoi se ronger la chique !
+    Partez de nouveau à l'abordage !
+</div>
+
+{% else %}
+{% for album in albums %}
+...
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}
